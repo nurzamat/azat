@@ -1,0 +1,17 @@
+<resources>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
+    <dimen name="activity_gallery_margin">5dp</dimen>
+
+    <dimen name="content">12dp</dimen>
+    <dimen name="username">12dip</dimen>
+    <dimen name="genre">12dip</dimen>
+    <dimen name="price">12dip</dimen>
+    <dimen name="item_offset">2dp</dimen>
+
+    <dimen name="tabsHeight">48dp</dimen>
+    <!--<dimen name="fab_margin">0dp</dimen>-->
+    <dimen name="fab_margin">16dp</dimen>
+    <dimen name="app_bar_height_profile">250dp</dimen>
+</resources>

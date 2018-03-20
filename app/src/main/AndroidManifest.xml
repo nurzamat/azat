@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="kg.azat.azat">
+
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
+    <application
+        android:name="kg.azat.azat.AppController"
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme">
+        <provider
+            android:name="kg.azat.azat.MySuggestionProvider"
+            android:authorities="org.ananasit.azat.MySuggestionProvider" />
+
+        <activity
+            android:name="kg.azat.azat.StartActivity"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="kg.azat.azat.MainActivity"
+            android:label="@string/title_activity_main">
+            <meta-data
+                android:name="android.app.default_searchable"
+                android:value=".SearchResultsActivity" />
+        </activity>
+        <activity
+            android:name="kg.azat.azat.SubcatsActivity"
+            android:label="@string/title_activity_subcats" />
+        <activity
+            android:name="kg.azat.azat.PostsActivity"
+            android:label="@string/title_activity_posts">
+        </activity>
+        <activity
+            android:name="kg.azat.azat.CategoriesActivity"
+            android:label="@string/title_activity_categories"
+            android:launchMode="singleInstance" />
+        <activity
+            android:name="kg.azat.azat.MultiPhotoSelectActivity"
+            android:label="@string/title_activity_multi_photo_select" />
+        <activity
+            android:name="kg.azat.azat.FullScreenViewActivity"
+            android:label="@string/title_activity_full_screen_view" />
+        <activity
+            android:name="kg.azat.azat.DeleteImageActivity"
+            android:label="@string/title_activity_delete_image" />
+        <activity
+            android:name="kg.azat.azat.DeletePostActivity"
+            android:label="@string/title_activity_delete_post" />
+        <activity
+            android:name="kg.azat.azat.MyPostsActivity"
+            android:label="@string/title_activity_my_posts">
+        </activity>
+        <activity
+            android:name="kg.azat.azat.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:windowSoftInputMode="adjustResize|stateVisible" />
+        <activity
+            android:name="kg.azat.azat.EditPostActivity"
+            android:label="@string/title_activity_edit_post" />
+        <activity
+            android:name="kg.azat.azat.SearchResultsActivity"
+            android:label="@string/title_activity_search_results"
+            android:launchMode="singleTop">
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+        <activity
+            android:name="kg.azat.azat.SignupActivity"
+            android:label="@string/title_activity_signup" />
+        <activity
+            android:name="kg.azat.azat.PostDetailActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="kg.azat.azat.MyLikesActivity"
+            android:label="@string/title_activity_my_likes" />
+        <activity android:name="kg.azat.azat.ChatRoomsActivity" />
+        <activity android:name="kg.azat.azat.ChatRoomMessagesActivity" />
+        <activity android:name="kg.azat.azat.ChatsActivity" />
+        <activity android:name="kg.azat.azat.MessagesActivity" />
+        <activity android:name="kg.azat.azat.MyProfileActivity"/>
+
+        <!-- START Added for GCM -->
+        <service android:name="kg.azat.azat.gcm.MyInstanceIDListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+        <service android:name="kg.azat.azat.gcm.MyFcmListenerService">
+            <intent-filter>
+                <action android:name="com.google.firebase.MESSAGING_EVENT" />
+            </intent-filter>
+        </service>
+        <service
+            android:name="kg.azat.azat.gcm.GcmIntentService"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
+            </intent-filter>
+        </service>
+
+        <!-- END Added for GCM -->
+        <activity
+            android:name="kg.azat.azat.AddPostActivity"
+            android:theme="@style/AppTheme" />
+        <activity
+            android:name="kg.azat.azat.SettingsActivity"
+            android:label="@string/title_activity_settings"
+            android:theme="@style/AppTheme"></activity>
+    </application>
+
+</manifest>

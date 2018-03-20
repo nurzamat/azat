@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_profile"
+            android:checked="false"
+            android:icon="@drawable/ic_action_profile"
+            android:title="@string/navigation_profile" />
+        <item
+            android:id="@+id/nav_ads"
+            android:checked="false"
+            android:icon="@drawable/ic_action_ads"
+            android:title="@string/navigation_ads" />
+        <item
+            android:id="@+id/nav_favourites"
+            android:checked="false"
+            android:icon="@drawable/ic_action_like"
+            android:title="@string/navigation_favourites" />
+        <item
+            android:id="@+id/nav_messages"
+            android:checked="false"
+            android:icon="@drawable/ic_action_message"
+            android:title="@string/navigation_messages" />
+        <item
+            android:id="@+id/nav_settings"
+            android:checked="false"
+            android:icon="@drawable/ic_action_settings"
+            android:title="@string/navigation_settings" />
+    </group>
+
+    <item android:title="О нас">
+        <menu>
+            <item
+                android:id="@+id/nav_about"
+                android:checked="false"
+                android:icon="@drawable/ic_action_about"
+                android:title="@string/navigation_about" />
+            <item
+                android:id="@+id/nav_send"
+                android:icon="@drawable/ic_menu_send"
+                android:title="Send" />
+            <item
+                android:id="@+id/nav_share"
+                android:icon="@drawable/ic_menu_share"
+                android:title="Share" />
+        </menu>
+    </item>
+
+</menu>

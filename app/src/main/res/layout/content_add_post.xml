@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="org.ananasit.azat.AddPostActivity"
+    tools:showIn="@layout/activity_add_post">
+    <RelativeLayout
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp">
+        <LinearLayout android:focusable="true"
+            android:focusableInTouchMode="true"
+            android:layout_width="0px"
+            android:layout_height="0px" />
+        <Button
+            android:id="@+id/btnCategory"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginTop="70dip"
+            android:textSize="15dp"
+            android:text="@string/choose_category_ru"
+            android:background="@drawable/btn_selector"
+            android:textColor = "@android:color/white"
+            android:layout_below="@+id/indicator"/>
+        <Spinner android:id="@+id/action_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/btnCategory"
+            android:visibility="invisible"/>
+        <LinearLayout
+            android:id="@+id/sex_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/action_spinner"
+            android:orientation="horizontal">
+            <Spinner android:id="@+id/sex_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"/>
+            <EditText
+                android:id="@+id/birth_year"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:maxLength="4"
+                android:inputType="number"
+                android:hint="Год рождения"
+                android:visibility="invisible"/>
+        </LinearLayout>
+        <EditText android:id="@+id/title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:hint="Тема"
+            android:maxLength="40"
+            android:singleLine="true"
+            android:layout_below="@+id/sex_layout"/>
+        <EditText android:id="@+id/content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dip"
+            android:hint="Текст"
+            android:singleLine="false"
+            android:maxLength="200"
+            android:layout_below="@+id/title"/>
+        <LinearLayout
+            android:id="@+id/price_layout"
+            android:layout_marginTop="20dip"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@+id/content"
+            android:orientation="horizontal">
+            <EditText android:id="@+id/price"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:hint="@string/price_hint"
+                android:singleLine="true"
+                android:inputType="numberDecimal"
+                android:maxLength="18"
+                android:visibility="invisible"/>
+            <Spinner android:id="@+id/price_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="invisible"/>
+        </LinearLayout>
+        <EditText
+            android:id="@+id/phone"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/price_layout"
+            android:singleLine="true"
+            android:inputType="number"
+            android:hint="Номер тел." />
+
+        <ImageView
+            android:id="@+id/location_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/phone"
+            android:background="@drawable/from"/>
+        <Spinner
+            android:id="@+id/region_spinner"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/location_image"
+            android:layout_toRightOf="@+id/location_image" />
+        <LinearLayout
+            android:id="@+id/city_layout"
+            android:layout_marginTop="20dp"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_below="@+id/location_image"
+            android:orientation="horizontal">
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/from"
+                android:visibility="invisible"/>
+            <Spinner android:id="@+id/city_spinner"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="bottom"
+                android:visibility="invisible"/>
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnPost"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="@string/add"
+            android:layout_below="@+id/city_layout"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+</android.support.v4.widget.NestedScrollView>

@@ -1,0 +1,10 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="org.ananasit.azat.PostsActivity">
+    <item
+        android:id="@+id/action_toggle"
+        android:title="Show as list"
+        android:icon="@drawable/ic_reorder_horizontal"
+        app:showAsAction="always" />
+</menu>

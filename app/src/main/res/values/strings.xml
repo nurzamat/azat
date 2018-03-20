@@ -1,0 +1,237 @@
+<resources>
+    <string name="app_name">Azat</string>
+
+    <string name="openDrawer">openDrawer</string>
+    <string name="closeDrawer">closeDrawer</string>
+    <string name="cancel">Отмена</string>
+    <string name="action_settings">Настройки</string>
+    <string name="action_like">Нравится</string>
+    <string name="action_add_post">Добавить</string>
+    <string name="action_filter">Фильтр</string>
+    <string name="send_message">Сообщение</string>
+    <string name="call">Позвонить</string>
+    <string name="search_go">Поиск</string>
+    <string name="search_hint">Поиск</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="title_activity_main"></string>
+    <string name="title_activity_subcats"></string>
+    <string name="title_activity_posts"></string>
+    <string name="no_posts">Нет постов</string>
+    <string name="no_photo">Нет фото</string>
+    <string name="add">Добавить</string>
+    <string name="edit">Редактировать</string>
+    <string name="save">Сохранить</string>
+    <string name="delete">Удалить</string>
+    <string name="price_hint">Цена</string>
+    <string name="from">от</string>
+    <string name="to">до</string>
+    <string name="sex">Пол</string>
+    <string name="male">Мужской</string>
+    <string name="female">Женский</string>
+    <string name="choose_category_ru">Выберите категорию</string>
+    <string name="title_activity_categories">Категории</string>
+    <string name="title_activity_multi_photo_select"></string>
+
+    <string-array name="price_currencies">
+        <item>сом</item>
+        <item>USD</item>
+    </string-array>
+    <string-array name="sex">
+        <item>Ваш пол</item>
+        <item>Мужской</item>
+        <item>Женский</item>
+    </string-array>
+    <string-array name="buy_sell">
+        <item>Продаю</item>
+        <item>Куплю</item>
+    </string-array>
+    <string-array name="rent_get_give">
+        <item>Сдаю</item>
+        <item>Сниму</item>
+    </string-array>
+    <string-array name="work_resume_vacancy">
+        <item>Вакансия</item>
+        <item>Ищу работу (резюме)</item>
+    </string-array>
+    <string-array name="regions_for_filter">
+        <item>Все области</item>
+        <item>Чуйская область</item>
+        <item>Иссык-Кульская область</item>
+        <item>Нарынская область</item>
+        <item>Таласская область</item>
+        <item>Джалал-Абадская область</item>
+        <item>Ошская область</item>
+        <item>Баткенская область</item>
+    </string-array>
+    <string-array name="regions">
+        <item>Область</item>
+        <item>Чуйская область</item>
+        <item>Иссык-Кульская область</item>
+        <item>Нарынская область</item>
+        <item>Таласская область</item>
+        <item>Джалал-Абадская область</item>
+        <item>Ошская область</item>
+        <item>Баткенская область</item>
+    </string-array>
+    <string-array name="chuy">
+        <item>Бишкек</item>
+        <item>Кара-Балта</item>
+        <item>Беловодск</item>
+        <item>Каинди</item>
+        <item>Сокулук</item>
+        <item>Шопоков</item>
+        <item>Кант</item>
+        <item>Токмок</item>
+        <item>Орловка</item>
+    </string-array>
+    <string-array name="issyk">
+        <item>Каракол</item>
+        <item>Теплоключенка</item>
+        <item>Кызыл-Суу</item>
+        <item>Чолпон-Ата</item>
+        <item>Боконбаево</item>
+        <item>Тюп</item>
+        <item>Балыкчи</item>
+    </string-array>
+    <string-array name="naryn">
+        <item>Нарын</item>
+        <item>Баетово</item>
+        <item>Ат-Башы</item>
+        <item>Чаек</item>
+        <item>Кочкор</item>
+    </string-array>
+    <string-array name="talas">
+        <item>Талас</item>
+        <item>Бакай-Ата</item>
+        <item>Кызыл-Адыр</item>
+        <item>Покровка</item>
+        <item>Кок-Ой</item>
+    </string-array>
+    <string-array name="jalalabad">
+        <item>Джалал-Абад</item>
+        <item>Ала-Бука</item>
+        <item>Базар-Коргон</item>
+        <item>Кербен</item>
+        <item>Массы</item>
+        <item>Кочкор-Ата</item>
+        <item>Кок-Джангак</item>
+        <item>Таш-Комур</item>
+        <item>Сузак</item>
+        <item>Казарман</item>
+        <item>Токтогул</item>
+        <item>Каныш-Кия</item>
+        <item>Кара-Кол</item>
+        <item>Майлуу-Суу</item>
+    </string-array>
+    <string-array name="osh">
+        <item>Ош</item>
+        <item>Гульча</item>
+        <item>Араван</item>
+        <item>Кара-Суу</item>
+        <item>Ноокат</item>
+        <item>Кара-Кульджа</item>
+        <item>Узген</item>
+        <item>Дароот-Коргон</item>
+    </string-array>
+    <string-array name="batken">
+        <item>Баткен</item>
+        <item>Исфана</item>
+        <item>Пульгон</item>
+        <item>Кызыл-Кия</item>
+        <item>Сулюкта</item>
+        <item>Айдаркен</item>
+    </string-array>
+    <string name="title_activity_full_screen_view">FullScreenViewActivity</string>
+    <string name="title_activity_search_results">SearchResultsActivity</string>
+    <string name="title_activity_delete_post">DeletePostActivity</string>
+    <string name="title_activity_delete_image">DeleteImageActivity</string>
+    <string name="title_activity_signup">SignupActivity</string>
+    <string name="title_activity_edit_post">EditPostActivity</string>
+    <string name="title_activity_my_posts">Мои заказы</string>
+
+    <string name="title_activity_login">Sign in</string>
+    <!-- Strings related to login -->
+
+    <string name="tab_1">Все</string>
+    <string name="tab_2">Категории</string>
+
+    <string name="navigation_profile">Профиль</string>
+    <string name="navigation_ads">Мои заказы</string>
+    <string name="navigation_favourites">Нравится</string>
+    <string name="navigation_messages">Сообщения</string>
+    <string name="navigation_settings">Настройки</string>
+    <string name="navigation_about">О программе</string>
+
+    <!-- start chat -->
+    <!-- end chat -->
+    <string name="title_activity_my_likes">Нравится</string>
+
+    <string name="hint_email">Email</string>
+    <string name="err_msg_name">Enter full name</string>
+    <string name="err_msg_email">Enter valid email address</string>
+    <string name="err_msg_phone">Enter valid phone number</string>
+
+    <!-- Content descriptions -->
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Strings related to Settings -->
+
+    <!-- Example General settings -->
+    <string name="pref_header_general">General</string>
+
+    <string name="pref_title_social_recommendations">Enable social recommendations</string>
+    <string name="pref_description_social_recommendations">Recommendations for people to contact
+        based on your message history
+    </string>
+
+    <string name="pref_title_display_name">Display name</string>
+    <string name="pref_default_display_name">John Smith</string>
+
+    <string name="pref_title_add_friends_to_messages">Add friends to messages</string>
+    <string-array name="pref_example_list_titles">
+        <item>Always</item>
+        <item>When possible</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_example_list_values">
+        <item>1</item>
+        <item>0</item>
+        <item>-1</item>
+    </string-array>
+
+    <!-- Example settings for Data & Sync -->
+    <string name="pref_header_data_sync">Data &amp; sync</string>
+
+    <string name="pref_title_sync_frequency">Sync frequency</string>
+    <string-array name="pref_sync_frequency_titles">
+        <item>15 minutes</item>
+        <item>30 minutes</item>
+        <item>1 hour</item>
+        <item>3 hours</item>
+        <item>6 hours</item>
+        <item>Never</item>
+    </string-array>
+    <string-array name="pref_sync_frequency_values">
+        <item>15</item>
+        <item>30</item>
+        <item>60</item>
+        <item>180</item>
+        <item>360</item>
+        <item>-1</item>
+    </string-array>
+
+    <string name="pref_title_system_sync_settings">System sync settings</string>
+
+    <!-- Example settings for Notifications -->
+    <string name="pref_header_notifications">Notifications</string>
+
+    <string name="pref_title_new_message_notifications">New message notifications</string>
+
+    <string name="pref_title_ringtone">Ringtone</string>
+    <string name="pref_ringtone_silent">Silent</string>
+
+    <string name="pref_title_vibrate">Vibrate</string>
+
+    <!-- Strings related to login -->
+</resources>

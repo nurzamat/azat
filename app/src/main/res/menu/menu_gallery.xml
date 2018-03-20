@@ -1,0 +1,16 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MultiPhotoSelectActivity">
+
+    <item
+        android:id="@+id/action_camera"
+        android:icon="@drawable/ic_action_camera"
+        android:title="@string/action_like"
+        app:showAsAction="ifRoom"/>
+    <item
+        android:id="@+id/action_select"
+        android:icon="@drawable/select"
+        android:title="@string/action_like"
+        app:showAsAction="ifRoom"/>
+</menu>
