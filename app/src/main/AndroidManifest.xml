@@ -16,7 +16,7 @@
         android:theme="@style/AppTheme">
         <provider
             android:name="kg.azat.azat.MySuggestionProvider"
-            android:authorities="org.ananasit.azat.MySuggestionProvider" />
+            android:authorities="kg.azat.azat.MySuggestionProvider" />
 
         <activity
             android:name="kg.azat.azat.StartActivity"

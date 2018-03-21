@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="org.ananasit.azat.FullScreenViewActivity">
+    tools:context="kg.azat.azat.FullScreenViewActivity">
     <!--<include
         android:id="@+id/tool_bar"
         layout="@layout/tool_bar">
@@ -14,7 +14,7 @@
         android:layout_width="fill_parent"
         android:layout_height="fill_parent" />
 
-    <org.ananasit.azat.lib.CirclePageIndicator
+    <kg.azat.azat.lib.CirclePageIndicator
         android:id="@+id/indicator"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content" />

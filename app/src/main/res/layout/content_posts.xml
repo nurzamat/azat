@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_posts"
-    tools:context="org.ananasit.azat.PostsActivity"
+    tools:context="kg.azat.azat.PostsActivity"
     android:background="#e5e5e5">
     <ProgressBar
         android:id="@+id/loading"

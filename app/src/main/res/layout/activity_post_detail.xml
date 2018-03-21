@@ -6,7 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:context="org.ananasit.azat.PostDetailActivity">
+    tools:context="kg.azat.azat.PostDetailActivity">
     <android.support.design.widget.AppBarLayout
         android:id="@+id/app_bar"
         android:layout_height="wrap_content"
@@ -39,7 +39,7 @@
                     android:paddingTop="10dp"
                     android:layout_gravity="center"
                     android:overScrollMode="ifContentScrolls" />
-                <org.ananasit.azat.lib.CirclePageIndicator
+                <kg.azat.azat.lib.CirclePageIndicator
                     android:id="@+id/indicator"
                     android:layout_marginTop="5dp"
                     android:layout_marginBottom="5dp"

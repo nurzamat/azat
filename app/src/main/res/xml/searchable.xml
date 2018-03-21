@@ -3,5 +3,5 @@
     android:hint="@string/search_hint"
     android:label="@string/title_activity_search_results"
     android:textColorHint= "#a1d4e9"
-    android:searchSuggestAuthority="org.ananasit.azat.MySuggestionProvider"
+    android:searchSuggestAuthority="kg.azat.azat.MySuggestionProvider"
     android:searchSuggestSelection=" ?" />

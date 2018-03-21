@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_categories"
-    tools:context="org.ananasit.azat.CategoriesActivity"
+    tools:context="kg.azat.azat.CategoriesActivity"
     android:background="#e5e5e5">
     <ListView
         android:id="@+id/list"
