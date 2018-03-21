@@ -31,10 +31,6 @@ import kg.azat.azat.model.Post;
 public class EditPostActivity extends AppCompatActivity {
 
     private static final String TAG =  "[edit post response]";
-    ViewPager mPager;
-    PagerAdapter mAdapter;
-    CirclePageIndicator mIndicator;
-    Toolbar toolbar;
     String url = "";
     String content = "";
     String price = "";
@@ -53,7 +49,7 @@ public class EditPostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_edit_post);
 
-        toolbar = (Toolbar) findViewById(R.id.tool_bar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.tool_bar);
         setSupportActionBar(toolbar);
 
         //toolbar.setSubtitle(GlobalVar.SubCategory.getName());
@@ -189,10 +185,10 @@ public class EditPostActivity extends AppCompatActivity {
 
     private void ViewPagerWork() {
         int color = getResources().getColor(R.color.blue_dark);
-        mAdapter = new PostViewPagerAdapter(EditPostActivity.this);
-        mPager = (ViewPager) findViewById(R.id.pager);
+        PagerAdapter mAdapter = new PostViewPagerAdapter(EditPostActivity.this);
+        ViewPager mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
-        mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
+        CirclePageIndicator mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
         mIndicator.setFillColor(color);
         mIndicator.setStrokeColor(color);
         mIndicator.setRadius(5);

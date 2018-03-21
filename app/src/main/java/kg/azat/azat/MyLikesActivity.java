@@ -28,7 +28,6 @@ public class MyLikesActivity extends AppCompatActivity {
 
     private static final String TAG =  "[my_posts response]";
     private List<Post> postList = new ArrayList<Post>();
-    private ListView listView;
     private PostListAdapter adapter;
     private TextView emptyText;
     AppController appcon;
@@ -52,7 +51,7 @@ public class MyLikesActivity extends AppCompatActivity {
             }
         });
 
-        listView = (ListView) findViewById(R.id.list);
+        ListView listView = (ListView) findViewById(R.id.list);
         emptyText = (TextView) findViewById(android.R.id.empty);
         listView.setEmptyView(emptyText);
         adapter = new PostListAdapter(this, postList, true, false);

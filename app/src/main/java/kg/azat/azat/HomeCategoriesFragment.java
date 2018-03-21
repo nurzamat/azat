@@ -18,9 +18,6 @@ public class HomeCategoriesFragment extends Fragment
 {
 
     private View rootView;
-    private RecyclerView recyclerView;
-    private CategoriesRecyclerAdapter adapter;
-    private RecyclerView.LayoutManager mLayoutManager;
 
     public HomeCategoriesFragment()
     {
@@ -37,17 +34,17 @@ public class HomeCategoriesFragment extends Fragment
             rootView = inflater.inflate(R.layout.fragment_categories, container, false);
         }
 
-        recyclerView = (RecyclerView) rootView.findViewById(R.id.list);
+        RecyclerView recyclerView = (RecyclerView) rootView.findViewById(R.id.list);
         // use this setting to improve performance if you know that changes
         // in content do not change the layout size of the RecyclerView
         recyclerView.setHasFixedSize(true);
 
         // use a linear layout manager
-        mLayoutManager = new LinearLayoutManager(getActivity());
+        RecyclerView.LayoutManager mLayoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(mLayoutManager);
 
         // specify an adapter (see also next example)
-        adapter =  new CategoriesRecyclerAdapter(getActivity(), GlobalVar._categories);
+        CategoriesRecyclerAdapter adapter =  new CategoriesRecyclerAdapter(getActivity(), GlobalVar._categories);
         recyclerView.setAdapter(adapter);
 
         return rootView;

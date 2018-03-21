@@ -50,10 +50,7 @@ import kg.azat.azat.model.User;
 public class AddPostActivity extends AppCompatActivity {
 
     private String TAG = AddPostActivity.class.getSimpleName();
-    ViewPager mPager;
-    PagerAdapter mAdapter;
-    CirclePageIndicator mIndicator;
-    Toolbar toolbar;
+
     String title = "";
     String content = "";
     String price = "";
@@ -77,7 +74,7 @@ public class AddPostActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_post);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
 
@@ -253,10 +250,10 @@ public class AddPostActivity extends AppCompatActivity {
 
     private void ViewPagerWork() {
         int color = ContextCompat.getColor(this, R.color.blue);
-        mAdapter = new PostViewPagerAdapter(AddPostActivity.this);
-        mPager = (ViewPager) findViewById(R.id.pager);
+        PagerAdapter mAdapter = new PostViewPagerAdapter(AddPostActivity.this);
+        ViewPager mPager = (ViewPager) findViewById(R.id.pager);
         mPager.setAdapter(mAdapter);
-        mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
+        CirclePageIndicator mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
         mIndicator.setFillColor(color);
         mIndicator.setStrokeColor(color);
         mIndicator.setRadius(15);

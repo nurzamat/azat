@@ -16,8 +16,6 @@ import kg.azat.azat.helpers.GlobalVar;
 
 public class CategoriesActivity extends AppCompatActivity {
 
-    private ListView listView;
-    private ListAdapter adapter;
     public static Activity fa;
 
     @Override
@@ -39,9 +37,9 @@ public class CategoriesActivity extends AppCompatActivity {
             }
         });
 
-        listView = findViewById(R.id.list);
+        ListView listView = findViewById(R.id.list);
 
-        adapter =  new ListAdapter(this, GlobalVar._categories);
+        ListAdapter adapter =  new ListAdapter(this, GlobalVar._categories);
         listView.setAdapter(adapter);
 
         // Click event for single list row

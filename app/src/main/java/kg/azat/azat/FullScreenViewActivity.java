@@ -13,8 +13,6 @@ import kg.azat.azat.model.Post;
 
 public class FullScreenViewActivity extends AppCompatActivity {
 
-    private FullScreenImageAdapter adapter;
-    private ViewPager viewPager;
     private Post p = GlobalVar._Post;
 
     @Override
@@ -22,9 +20,9 @@ public class FullScreenViewActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_full_screen_view);
 
-        viewPager = (ViewPager) findViewById(R.id.pager);
+        ViewPager viewPager = (ViewPager) findViewById(R.id.pager);
 
-        adapter = new FullScreenImageAdapter(FullScreenViewActivity.this, p);
+        FullScreenImageAdapter adapter = new FullScreenImageAdapter(FullScreenViewActivity.this, p);
 
         viewPager.setAdapter(adapter);
 

@@ -37,7 +37,6 @@ import kg.azat.azat.model.User;
 public class MyProfileActivity extends AppCompatActivity {
 
     private String TAG = MyProfileActivity.class.getSimpleName();
-    private Toolbar toolbar;
     private CircleImageView profile_image;
     private EditText inputUsername, inputName, inputEmail, inputPhone;
     private TextInputLayout inputLayoutUsername, inputLayoutName, inputLayoutEmail, inputLayoutPhone;
@@ -52,7 +51,7 @@ public class MyProfileActivity extends AppCompatActivity {
     {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_my_profile);
-        toolbar = (Toolbar) findViewById(R.id.toolbar);
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);

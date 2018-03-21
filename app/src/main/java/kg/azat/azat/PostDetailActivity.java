@@ -37,12 +37,6 @@ import kg.azat.azat.model.User;
 
 public class PostDetailActivity extends AppCompatActivity implements EditPostDialog.SaveListener
 {
-
-    CollapsingToolbarLayout collapsingToolbar;
-    ViewPager mPager;
-    PostViewPagerAdapter mAdapter;
-    LinearLayout layout;
-    CirclePageIndicator mIndicator;
     private Post p = GlobalVar._Post;
     private Menu mOptionsMenu;
     private boolean like = false;
@@ -63,7 +57,7 @@ public class PostDetailActivity extends AppCompatActivity implements EditPostDia
         if(p.getImages() != null && p.getImages().size() > 0)
         {
             setContentView(R.layout.activity_post_detail);
-            collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
+            CollapsingToolbarLayout collapsingToolbar = (CollapsingToolbarLayout) findViewById(R.id.collapsing_toolbar);
             collapsingToolbar.setTitle(" ");
         }
         else
@@ -202,7 +196,7 @@ public class PostDetailActivity extends AppCompatActivity implements EditPostDia
 
 
         /*  // for image full screen logic
-        layout = (LinearLayout) findViewById(R.id.layout);
+        LinearLayout layout = (LinearLayout) findViewById(R.id.layout);
         layout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -227,12 +221,12 @@ public class PostDetailActivity extends AppCompatActivity implements EditPostDia
         {
             if(p.getImages() != null && p.getImages().size() > 0)
             {
-                mAdapter = new PostViewPagerAdapter(PostDetailActivity.this, p.getImages());
-                mPager = (ViewPager) findViewById(R.id.pager);
+                PostViewPagerAdapter mAdapter = new PostViewPagerAdapter(PostDetailActivity.this, p.getImages());
+                ViewPager mPager = (ViewPager) findViewById(R.id.pager);
                 mPager.setAdapter(mAdapter);
 
                 int color = ContextCompat.getColor(this, R.color.color_primary_green_dark);
-                mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
+                CirclePageIndicator mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
                 mIndicator.setFillColor(color);
                 mIndicator.setStrokeColor(color);
                 mIndicator.setRadius(15);
