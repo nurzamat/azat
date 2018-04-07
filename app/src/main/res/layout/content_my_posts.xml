@@ -7,7 +7,7 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior"
     tools:showIn="@layout/activity_my_posts"
-    tools:context="kg.azat.azat.MyPostsActivity"
+    tools:context="kg.azat.azat.MyCartActivity"
     android:background="#e5e5e5">
     <ProgressBar
         android:id="@+id/loading"

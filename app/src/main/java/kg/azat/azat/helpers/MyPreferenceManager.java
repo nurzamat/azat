@@ -79,6 +79,17 @@ public class MyPreferenceManager {
         return pref.getString(Constants.GCM_TOKEN, "");
     }
 
+    public void saveOderId(int order_id)
+    {
+        editor.putInt(Constants.ORDER_ID, order_id);
+        editor.commit();
+    }
+
+    public int getOrderId()
+    {
+        return pref.getInt(Constants.ORDER_ID, 0);
+    }
+
     public void saveDatingSex(int sex)
     {
         editor.putInt(DATING_SEX, sex);

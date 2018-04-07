@@ -118,7 +118,7 @@ public class MainActivity extends AppCompatActivity {
                     case R.id.nav_settings:
                         //in = new Intent(MainActivity.this, SettingsActivityPref.class);
                         if(user != null)
-                            in = new Intent(MainActivity.this, SettingsActivity.class);
+                            in = new Intent(MainActivity.this, MyCartActivity.class);
                         else
                             in = new Intent(MainActivity.this, SignupActivity.class);
                         startActivity(in);

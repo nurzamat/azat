@@ -58,7 +58,7 @@
             android:name="kg.azat.azat.DeletePostActivity"
             android:label="@string/title_activity_delete_post" />
         <activity
-            android:name="kg.azat.azat.MyPostsActivity"
+            android:name="kg.azat.azat.MyCartActivity"
             android:label="@string/title_activity_my_posts">
         </activity>
         <activity

@@ -35,8 +35,14 @@ public class ApiHelper {
     public static final String MEDIA_URL = AZAT_URL;
     public static final String IMAGES_URL = BASE_URL + "/images";
     public static final String USER_PROFILE = BASE_URL + "/user/profile";
-    public static final String LOGIN_URL = BASE_URL + "/login";
+    public static final String LOGIN_URL = BASE_URL + "/login/";
     public static final String USER = BASE_URL + "/user/_ID_";
+    //order
+    public static final String ORDER_CREATE = BASE_URL + "/orders/create/";
+    public static final String ORDER_UPDATE = BASE_URL + "/orders/_ID_/status/_status_";
+    public static final String ORDER_ITEM_ADD = BASE_URL + "/order/item/add/";
+    public static final String USER_ORDERS = BASE_URL + "/user/_ID_/orders/";
+    public static final String ORDER_ITEMS = BASE_URL + "/orders/_ID_/items/";
     //group chat
     public static final String CHAT_ROOMS = BASE_URL + "/chat_rooms";
     public static final String CHAT_THREAD = BASE_URL + "/chat_rooms/_ID_";
@@ -86,11 +92,11 @@ public class ApiHelper {
         return new JSONObject(response);
     }
 
-    public JSONObject sendPost(JSONObject jsonObject)
+    public JSONObject sendPostRequest(JSONObject jsonObject, String url)
             throws ApiException, IOException, JSONException {
 
-        Log.i(TAG, "Sending request to: " + POST_URL);
-        String response = requestPost(POST_URL, jsonObject, true);
+        Log.i(TAG, "Sending request to: " + url);
+        String response = requestPost(url, jsonObject, false);
 
         Log.i(TAG, "Response: " + response);
         return new JSONObject(response);
@@ -202,6 +208,12 @@ public class ApiHelper {
 
         Log.i(TAG, "getCategoryPostsUrl: " + url);
         return url;
+    }
+
+    public static String getCartPostsUrl(int page, String order_id)
+    {
+        String endPoint = ORDER_ITEMS.replace("_ID_", order_id);
+        return endPoint  + "?page="+page;
     }
 
     public static class ApiException extends Exception {
@@ -559,21 +571,21 @@ public class ApiHelper {
         try
         {
             User user = new User();
-            user.setId(response.getString("id"));
+            user.setId(response.getString("user_id"));
             user.setActivated(false);
-            user.setName(response.getString("name"));
+            //user.setName(response.getString("name"));
             user.setUserName(response.getString("username"));
-            user.setEmail(response.getString("email"));
-            user.setPhone(response.getString("phone"));
-            user.setApi_key(response.getString("api_key"));
-            if(response.getString("image_name") != null && !response.getString("image_name").equals(""))
-                user.setAvatarUrl(ApiHelper.MEDIA_URL + "/profile/" + response.getString("image_name"));
+            //user.setEmail(response.getString("email"));
+            //user.setPhone(response.getString("phone"));
+            user.setApi_key(response.getString("token"));
+            //if(response.getString("image_name") != null && !response.getString("image_name").equals(""))
+            //    user.setAvatarUrl(ApiHelper.MEDIA_URL + "/profile/" + response.getString("image_name"));
 
             //setting user
             AppController appcon = AppController.getInstance();
             appcon.setUser(user);
             //setting gcm token
-            appcon.getPrefManager().saveToken(response.getString("gcm_registration_id"));
+            //appcon.getPrefManager().saveToken(response.getString("gcm_registration_id"));
         }
         catch (JSONException ex)
         {

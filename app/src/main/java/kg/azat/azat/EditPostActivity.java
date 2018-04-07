@@ -288,7 +288,7 @@ public class EditPostActivity extends AppCompatActivity {
                 GlobalVar.image_paths.clear();
                 GlobalVar._Post = null;
 
-                Intent in = new Intent(EditPostActivity.this, MyPostsActivity.class);
+                Intent in = new Intent(EditPostActivity.this, MyCartActivity.class);
                 startActivity(in);
             }
         }

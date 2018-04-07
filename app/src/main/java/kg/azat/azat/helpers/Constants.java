@@ -18,6 +18,7 @@ public final class Constants {
     public static final String ADD_POST_MODE = "add_post";
     public static final String POSTS_MODE = "posts";
     public static final String HOME_MODE = "home";
+    public static final String ORDER_ID = "order_id";
 
     //CHAT
     public static final String GCM_TOKEN = "gcm_token";

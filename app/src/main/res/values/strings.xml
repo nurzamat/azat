@@ -18,6 +18,7 @@
     <string name="title_activity_subcats"></string>
     <string name="title_activity_posts"></string>
     <string name="no_posts">Нет постов</string>
+    <string name="no_items">Карзина пуста</string>
     <string name="no_photo">Нет фото</string>
     <string name="add">Добавить</string>
     <string name="edit">Редактировать</string>

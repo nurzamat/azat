@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
+import android.support.design.widget.FloatingActionButton;
 import android.support.v4.app.DialogFragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.content.ContextCompat;
@@ -18,6 +19,7 @@ import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
 import android.widget.PopupMenu;
@@ -30,6 +32,7 @@ import de.hdodenhof.circleimageview.CircleImageView;
 import kg.azat.azat.adapter.PostViewPagerAdapter;
 import kg.azat.azat.helpers.ApiHelper;
 import kg.azat.azat.helpers.GlobalVar;
+import kg.azat.azat.helpers.MyPreferenceManager;
 import kg.azat.azat.helpers.Utils;
 import kg.azat.azat.lib.CirclePageIndicator;
 import kg.azat.azat.model.Post;
@@ -44,8 +47,8 @@ public class PostDetailActivity extends AppCompatActivity implements EditPostDia
     private int count = 0;
     //content params
     TextView hitcount, timestamp, location, title, price, price_currency, content, username, name;
+    EditText _productCount;
     ImageButton chat, call, btnMenu;
-    CircleImageView profile_image;
     boolean nav_ads;
     int position;
     public static PostDetailActivity _activity;
@@ -89,10 +92,8 @@ public class PostDetailActivity extends AppCompatActivity implements EditPostDia
         content = (TextView) findViewById(R.id.content);
         username = (TextView) findViewById(R.id.username);
         name = (TextView) findViewById(R.id.name);
-        chat = (ImageButton) findViewById(R.id.action_chat);
-        call = (ImageButton) findViewById(R.id.action_call);
+        _productCount = findViewById(R.id.product_count);
         btnMenu = (ImageButton) findViewById(R.id.btnMenu);
-        profile_image = (CircleImageView) findViewById(R.id.profile_image);
         //sets
         hitcount.setText(p.getHitcount());
         timestamp.setText(Utils.getTimeAgo(p.getDate_created()));
@@ -115,17 +116,6 @@ public class PostDetailActivity extends AppCompatActivity implements EditPostDia
                 else price.setText(""+res);
 
                 price_currency.setText(p.getPriceCurrency());
-            }
-
-            if(!p.getUser().getAvatarUrl().equals(""))
-            {
-                Glide.with(this).load(p.getUser().getAvatarUrl())
-                        .thumbnail(0.5f)
-                        .centerCrop()
-                        .placeholder(R.drawable.aka)
-                        .crossFade()
-                        .diskCacheStrategy(DiskCacheStrategy.ALL)
-                        .into(profile_image);
             }
 
             username.setText(p.getUser().getUserName());
@@ -194,6 +184,18 @@ public class PostDetailActivity extends AppCompatActivity implements EditPostDia
             ex.printStackTrace();
         }
 
+        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fabCart);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(_productCount == null || _productCount.getText() == null || _productCount.getText().toString().equals(""))
+                    Toast.makeText(PostDetailActivity.this, "Укажите количество", Toast.LENGTH_SHORT).show();
+                else {
+                    OrderItemTask task = new OrderItemTask();
+                    task.execute();
+                }
+            }
+        });
 
         /*  // for image full screen logic
         LinearLayout layout = (LinearLayout) findViewById(R.id.layout);
@@ -229,7 +231,7 @@ public class PostDetailActivity extends AppCompatActivity implements EditPostDia
                 CirclePageIndicator mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
                 mIndicator.setFillColor(color);
                 mIndicator.setStrokeColor(color);
-                mIndicator.setRadius(15);
+                mIndicator.setRadius(5);
                 mIndicator.setViewPager(mPager);
                 mIndicator.setSnap(true);
             }
@@ -303,6 +305,7 @@ public class PostDetailActivity extends AppCompatActivity implements EditPostDia
 
             }
             */
+
             return true;
         }
 
@@ -385,6 +388,71 @@ public class PostDetailActivity extends AppCompatActivity implements EditPostDia
         protected void onPostExecute(String result)
         {
             super.onPostExecute(result);
+        }
+    }
+
+    private class OrderItemTask extends AsyncTask<String, Void, String>
+    {
+        private ProgressDialog pDialog;
+
+        @Override
+        protected void onPreExecute() {
+            super.onPreExecute();
+
+            pDialog = ProgressDialog.show(PostDetailActivity.this, "", "Загрузка...", true);
+
+        }
+
+        @Override
+        protected String doInBackground(String... urls) {
+
+            try
+            {
+                ApiHelper api = new ApiHelper();
+                MyPreferenceManager prefManager =  AppController.getInstance().getPrefManager();
+                if(prefManager.getOrderId() == 0)
+                {
+                    JSONObject jsonObject = new JSONObject();
+                    jsonObject.put("user", client.getId());
+                    jsonObject.put("total", 0);
+                    jsonObject.put("status", 0);
+                    JSONObject obj = api.sendPostRequest(jsonObject, ApiHelper.ORDER_CREATE);
+                    if(!obj.getBoolean("error"))
+                    {
+                        prefManager.saveOderId(obj.getInt("id"));
+                    }
+                }
+
+                JSONObject jsonObject = new JSONObject();
+                jsonObject.put("order", prefManager.getOrderId());
+                jsonObject.put("post", p.getId());
+                jsonObject.put("amount", Integer.valueOf(_productCount.getText().toString()));
+                jsonObject.put("sum", 10);
+
+                JSONObject obj = api.sendPostRequest(jsonObject, ApiHelper.ORDER_ITEM_ADD);
+
+                if(obj.getBoolean("error"))
+                {
+                    return "error";
+                }
+            }
+            catch (Exception ex)
+            {
+                ex.printStackTrace();
+                return "error";
+            }
+
+            return "Добавлено в корзину";
+        }
+
+        @Override
+        protected void onPostExecute(String result)
+        {
+            pDialog.dismiss();
+            if(!result.equals(""))
+            {
+                Toast.makeText(PostDetailActivity.this, result, Toast.LENGTH_SHORT).show();
+            }
         }
     }
 

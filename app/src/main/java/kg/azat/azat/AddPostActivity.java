@@ -256,7 +256,7 @@ public class AddPostActivity extends AppCompatActivity {
         CirclePageIndicator mIndicator = (CirclePageIndicator) findViewById(R.id.indicator);
         mIndicator.setFillColor(color);
         mIndicator.setStrokeColor(color);
-        mIndicator.setRadius(15);
+        mIndicator.setRadius(5);
         mIndicator.setViewPager(mPager);
         mIndicator.setSnap(true);
     }

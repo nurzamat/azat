@@ -13,6 +13,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.Iterator;
+import java.util.TimeZone;
 
 import kg.azat.azat.R;
 import kg.azat.azat.model.Category;
@@ -210,7 +211,9 @@ public class Utils {
     }
 
     public static long getDateInMillis(String srcDate) {
-        SimpleDateFormat desiredFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        //SimpleDateFormat desiredFormat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat desiredFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss'Z'");
+        desiredFormat.setTimeZone(TimeZone.getTimeZone("GMT"));
 
         long dateInMillis = 0;
         try {
